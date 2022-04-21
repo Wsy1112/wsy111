@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    
+    <ul>
+        <li>新闻</li>
+        <li>体育</li>
+        <li>娱乐</li>
+        <li>电影</li>
+        <li>音乐</li>
+        <li>旅游</li>
+    </ul>
+</body>
+
+</html>
+<script>
+    var box = document.querySelectorAll('p')
+    var by = document.querySelector('body')
+    var lis=document.querySelectorAll('li')
+  
+    for (var i = 0; i < box.length; i++) {
+        box[i].index = i
+        box[i].onclick = function () {
+           
+            if (this.index == 0) {
+                for(var j=0;j<lis.length;j++){
+                    // if(j==0){
+                        
+                    // }
+                    lis[j].style.backgroundColor='red'
+                }
+                box[this.index].classList.add('active')
+                box[1].classList.remove('active')
+                box[2].classList.remove('active')
+                by.style.backgroundColor = 'pink'
+            } else if (this.index == 1) {
+                for(var j=0;j<lis.length;j++){
+                    // if(j==0){
+                        
+                    // }
+                    lis[j].style.backgroundColor='blue'
+                }
+                box[this.index].classList.add('active')
+                box[0].classList.remove('active')
+                box[2].classList.remove('active')
+                by.style.backgroundColor = 'skyblue'
+            } else if (this.index == 2) {
+                for(var j=0;j<lis.length;j++){
+                    // if(j==0){
+                        
+                    // }
+                    lis[j].style.backgroundColor='black'
+                }
+                box[this.index].classList.add('active')
+                box[0].classList.remove('active')
+                box[1].classList.remove('active')
+                by.style.backgroundColor = 'gray'
+            }
+        }
+    }
+</script>
+<style>
+    div {
+        display: flex;
+        justify-content: center;
+       
+    }
+
+    p {
+        width: 8px;
+        height: 8px;
+        margin: 10px;
+    }
+
+    p:nth-child(1) {
+        background-color: red;
+        border: 5px solid red;
+    }
+
+    p:nth-child(2) {
+        background-color: blue;
+        border: 5px solid blue;
+    }
+
+    p:nth-child(3) {
+        background-color: black;
+        border: 5px solid black;
+    }
+    .active{
+        background-color: #fff !important;
+    }
+    ul{
+        display: flex;
+        width: 500px;
+        margin: auto;
+    } 
+    li{
+        list-style: none;
+        width: 100px;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid #000;
+    }
+</style>
