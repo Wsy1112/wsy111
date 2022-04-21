@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button>输入法</button>
+        <ul>
+            <li>简写</li>
+            <li>拼音</li>
+            <li>关闭</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var btn=document.querySelector('button')
+    var box=document.querySelector('ul')
+    var boxs=document.querySelectorAll('li')
+    var flag=1
+    btn.onclick=function(){
+        if(flag){
+            box.style.display='block'
+            flag=0
+        }else{
+            box.style.display='none'
+            flag=1
+        }        
+        
+    }
+    
+    for(var i=0;i<boxs.length;i++){
+        boxs[i].index=i
+        boxs[i].onmouseover=function(){
+            this.style.backgroundColor='red'
+        }
+        boxs[i].onmouseout=function(){
+            this.style.backgroundColor=''
+        }
+       boxs[i].onclick=function(){
+           if(this.index==2){
+               box.style.display='none'
+           }
+       }
+    }
+</script>
+<style>
+    div{
+        margin: auto;
+        width: 60px;
+        /* background-color: aqua; */
+        text-align: center;
+    }
+    ul{
+        margin-top: 10px !important;
+        margin: 0;
+        padding: 0;
+        display: none;
+    }
+    li{
+        list-style: none;
+        border: 1px solid #000;
+        line-height: 30px;
+    }
+ 
+</style>
