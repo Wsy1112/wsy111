@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+        <p><input type="text" value="1,2,3"> 输入数字求和，数字之间用逗号分隔</p>
+        <button>提交</button> <b></b>
+    </div>
+</body>
+
+</html>
+<script>
+    var btn=document.querySelector('button')
+    var b=document.querySelector('b')
+    var ip=document.querySelector('input')
+    btn.onclick=function(){
+        var sum=0;
+       var aa= ip.value.split(',')
+       console.log(aa);
+       for(var i in aa){
+          
+           sum += parseInt(aa[i]) 
+       }
+      b.innerHTML=sum
+    }
+</script>
+<style>
+
+    div{
+        width: 500px;
+        margin: auto;
+    }
+
+</style>

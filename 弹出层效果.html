@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mask"></div>
+    <button>弹出层</button>
+    <div class="box">
+        <span>关闭</span>
+    </div>
+</body>
+
+</html>
+<script>
+    var btn = document.querySelector('button')
+    var box = document.getElementsByClassName('box')[0]
+    var mask = document.getElementsByClassName('mask')[0]
+    var span = document.querySelector('span')
+    btn.onclick = function () {
+        box.style.display = 'block'
+        mask.style.display = 'block'
+    }
+    span.onclick = function () {
+        box.style.display = 'none'
+        mask.style.display = 'none'
+    }
+</script>
+<style>
+    body {
+        text-align: center;
+    }
+
+    .box {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        width: 500px;
+        border: 2px solid #000;
+        margin: 100px auto;
+        z-index: 99;
+        height: 300px;
+        background-color: bisque;
+    }
+
+    span {
+        float: right;
+        margin: 10px;
+    }
+
+    .mask {
+        display: none;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.322);
+    }
+</style>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bigbox">
+        <p>属性名：<input type="text" value="background"></p>
+        <p>属性值：<input type="text" value="pink"></p>
+        <button>确定</button>
+        <button>重置</button>
+    </div>
+    <div class="box">
+        在上方输入框输入"属性名"及"属性值",点击确定按钮查看效果。
+    </div>
+</body>
+</html>
+
+<script>
+    function changeType(a,b,c){
+        a.style[b]=c
+    }
+    var ip=document.querySelectorAll('input')
+    var btn=document.querySelectorAll('button')
+    var box=document.querySelector('.box')
+    btn[0].onclick=function(){
+        changeType(box,ip[0].value,ip[1].value)
+        // console.log(ip[0],ip[1]);
+    }
+    btn[1].onclick=function(){
+        box.removeAttribute('style')
+    }
+</script>
+<style>
+
+    .bigbox{
+        width: 250px;
+        margin: auto;
+    }
+    .box{
+        margin:10px auto;
+        width: 200px;
+        height: 200px;
+        background-color: #000;
+        color: #fff;
+    }
+</style>
