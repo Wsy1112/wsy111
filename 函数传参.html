@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="a" value="北京市">
+        <input type="text" name="a" value="海淀区">
+    </div>
+    <button>传参</button>
+</body>
+
+</html>
+<script>
+    var aa=document.getElementsByName('a')
+    var btn=document.querySelector('button')
+    function tanchu(x){
+        alert(x)
+    }
+    btn.onclick=function(){
+       
+        for(var i=0;i<aa.length;i++){
+           tanchu(aa[i].value);
+        }
+    }
+</script>
+<style>
+    
+    input{
+        margin:10px auto;
+        display: block;
+    }
+    body{
+        text-align: center;
+    }
+</style>
