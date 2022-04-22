@@ -12,7 +12,7 @@
     <div>
 
         <ul>
-            <li><input type="checkbox">全选 反选</li>
+            <li><input type="checkbox"><span class="p">全选</span> <span class="fx">反选</span></li>
             <li><input type="checkbox">选项一</li>
             <li><input type="checkbox">选项二</li>
             <li><input type="checkbox">选项三</li>
@@ -27,19 +27,55 @@
 
 </html>
 <script>
-    var it = document.querySelector('input')
-    for (var j = 0; j < it.length; j++) {
-        it[0].onmouseup = function () {
-            console.log(this);
+    var it = document.querySelectorAll('input')
+    var sp=document.querySelector('.fx')
+    var p=document.querySelector('.p')
+    function change(a){
+        a=!a
+    }
+   sp.onclick=function(){
+        for(var a=1;a<it.length;a++){
+            
+                it[a].checked=!it[a].checked
+                // if(this.checked)
+            
+        }
+
+   }
+    for (var i = 0; i < it.length; i++) {
+
+        it[i].index = i
+        it[0].onclick = function () {
+            console.log(this.checked);
             if (this.checked == true) {
-               console.log(1);
-                for (var i = 0; i < it.length; i++) {
-                    // dx[i].checked=true
-                    console.log(it);
-                    console.log(it[i]);
+                for (var j = 0; j < it.length; j++) {
+                    it[j].checked = true
+                    p.innerHTML='全不选'
+                }
+            } else {
+                for (var j = 0; j < it.length; j++) {
+                    it[j].checked = false
+                    p.innerHTML='全选'
                 }
             }
+
+
         }
+        it[i].onclick=function(){
+            if(this.checked==true){
+                for (var j = 0; j < it.length; j++) {
+                    it[0].checked = true
+
+                }
+            }else{
+                for (var j = 0; j < it.length; j++) {
+                    it[0].checked = false
+
+                }
+            }
+           
+        }
+
     }
 </script>
 <style>
